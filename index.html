@@ -12,29 +12,25 @@
 
 
 
-<script>
- let num = 5;
+    <script>
+        let num = 5;
 
- let guess = 0; 
-
- While(guess != num)
-
-  guess = propmt('gissa på ett tal: ');
-
-  if(guess == num) {
-
-     alert('du gissade rätt');
-
-  } else if ( guess > num) {
-
-      alert('Gissning är för stor');
-
-  } else if (guess < num) {
-
-      alert('Gissningen är för liten');
-
-  }
-</script>
+        let guess = 0;
+        
+        while(guess != num) { 
+            guess = prompt('Gissa på ett tal: ');
+        
+            if (guess == num) {
+                alert('Du gissade rätt');
+            } else if (guess > num) {
+                alert('Gissningen är för stor');
+            } else if (guess < num) {
+                alert('Gissningen är för liten');
+            } else {
+                alert('Någonting gick snett');
+            }
+        }
+    </script>
 
 
 </body>
