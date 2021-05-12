@@ -12,24 +12,36 @@
 
 
 
+    <input type="text" name="guess">
+
+
+    <p></p>
+
     <script>
-        let num = 5;
+        let num = Math.round(Math.random()* 10);
+        let el = document.querySelector('input');
+        let p = document.querySelector('p');
+        let guesses = 0;
 
-        let guess = 0;
 
-        while(guess != num) { 
-            guess = prompt('Gissa på ett tal: ');
+
+        el.addEventListener('change', function() {
+            guesses += 1;
         
-            if (guess == num) {
-                alert('Du gissade rätt');
-            } else if (guess > num) {
-                alert('Gissningen är för stor');
-            } else if (guess < num) {
-                alert('Gissningen är för liten');
+            
+            if (el.value == num) {
+                p.textContent = "Du gissade rätt med " + guesses + " gissningar"
+
+            } else if (el.value > num) {
+                p.textContent = "Gissningen är för stor"
+
+            } else if (el.value < num) {
+                p.textContent = "Din gissning är för liten"
+
             } else {
-                alert('skriv ett nummer');
+                p.textContent = "Skriv ett nummer"
             }
-        }
+        });
     </script>
 
 
